@@ -6,16 +6,18 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 淦 # ex. I m Chuan
-name: 淦 # ex. DONGChuan
+title: 可恶的光头强 # ex. I m Chuan
+subtitle: 学而时习之，不亦说乎
+name: 可恶的光头强 # ex. DONGChuan
 email: 969752912@qq.com
-location: My location # ex. Nice, France
-company: MyCompany
-company_url: my_company_website
+search: 度娘 # ex. Nice, France
+search_url: https://www.baidu.com
+oldBlog: 原博客
+oldBlog_url: https://blog.csdn.net/chaofan1996
 github_url: my_github_url # ex. https://github.com/DONGChuan
 github_username: # ex. DONGChuan
 description: description_of_your_web_site
-favicon: favicon.png # Image must be in assets/images
+favicon: gtq.jpg # Image must be in assets/images
 repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
@@ -62,19 +64,19 @@ navs:
 
   -
     href: /open-source
-    label: Open-Source
+    label: Spring
 
   -
     href: /blog
-    label: Blog
+    label: Springboot
 
   -
     href: /bookmark
-    label: Bookmark
+    label: Vue
 
   -
     href: /about
-    label: About
+    label: Other
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
