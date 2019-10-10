@@ -60,23 +60,23 @@ paginate_path: 'page:num'
 navs:
   -
     href: /
-    label: Home
+    label: 首页
 
   -
     href: /open-source
-    label: Spring
+    label: 项目源码
 
   -
     href: /blog
-    label: Springboot
+    label: 博客分享
 
   -
     href: /bookmark
-    label: Vue
+    label: 笔记心得
 
   -
     href: /about
-    label: Other
+    label: About
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
