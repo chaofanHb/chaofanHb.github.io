@@ -5,12 +5,12 @@ var windowScroll = function () {
         var scrollPos = $(this).scrollTop();
         
         var system ={win : false,mac : false,xll : false};
-        //¼ì²âÆ½Ì¨
+        //ï¿½ï¿½ï¿½Æ½Ì¨
         var p = navigator.platform;
         system.win = p.indexOf("Win") == 0;
         system.mac = p.indexOf("Mac") == 0;
         system.x11 = (p == "X11") || (p.indexOf("Linux") == 0);
-        //ÅĞ¶ÏÆ½Ì¨ÀàĞÍ
+        //ï¿½Ğ¶ï¿½Æ½Ì¨ï¿½ï¿½ï¿½ï¿½
         if(system.win||system.mac||system.xll){
             if ($(window).scrollTop() > 70)
             {
@@ -19,7 +19,7 @@ var windowScroll = function () {
                 $('.site-header').removeClass('site-header-nav-scrolled');
             }
         }else{
-            //Èç¹ûÊÇÊÖ»úÔò½«¶¥À¸ÒÆ³ı½çÃæ
+            //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ï¿½ò½«¶ï¿½ï¿½ï¿½ï¿½Æ³ï¿½ï¿½ï¿½ï¿½ï¿½
             if ($(window).scrollTop() > 40) 
             {
                 $('.site-header').addClass('site-header-nav-scrolled-ph');
@@ -32,4 +32,22 @@ var windowScroll = function () {
 
 $( document ).ready(function() {
     windowScroll();
+
+    //ä¸ºè¶…é“¾æ¥åŠ ä¸Štarget='_blank'å±æ€§
+	$('a[href^="http"]').each(function() {
+		$(this).attr('target', '_blank');
+    });
+    
+    var gitalk = new Gitalk({
+        clientID: '9551248533449b4a4385', //Client ID
+      
+        clientSecret: '2df193c2832debdf6d5bea6e676690d0bc7f81e3', //Client Secret
+      
+        repo: 'blogtalk',//ä»“åº“åç§°
+        owner: 'chaofanHb',//ä»“åº“æ‹¥æœ‰è€…
+        admin: ['chaofanHb'],
+        id: location.href,      // Ensure uniqueness and length less than 50
+        distractionFreeMode: false  // Facebook-like distraction free mode
+      })
+    gitalk.render('gitalk-container')
 });
