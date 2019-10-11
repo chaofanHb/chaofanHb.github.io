@@ -73,16 +73,4 @@ route.meta.index需要在路由设置好，规定好顺序层次。
 {% endhighlight %}
 npm run dev 运行即可。
 
-
-
-<-- 引入 -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-  <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-
-<-- 添加一个容器-->
-<div id="gitalk-container"></div>
-
-<-- 生成 gitalk 插件-->
-<script>
-
-</script>
+<div id="gitalk-container-vue-animation"></div>

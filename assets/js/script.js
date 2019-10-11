@@ -30,14 +30,7 @@ var windowScroll = function () {
  });
 };
 
-$( document ).ready(function() {
-    windowScroll();
-
-    //为超链接加上target='_blank'属性
-	$('a[href^="http"]').each(function() {
-		$(this).attr('target', '_blank');
-    });
-    
+var initVueAnimationComment = function(){
     var gitalk = new Gitalk({
         clientID: '9551248533449b4a4385', //Client ID
       
@@ -49,5 +42,17 @@ $( document ).ready(function() {
         id: "vue-animation",      // Ensure uniqueness and length less than 50
         distractionFreeMode: false  // Facebook-like distraction free mode
       })
-    gitalk.render('gitalk-container')
+    gitalk.render('gitalk-container-vue-animation')
+}
+
+$( document ).ready(function() {
+    windowScroll();
+    initVueAnimationComment();
+
+    //为超链接加上target='_blank'属性
+	$('a[href^="http"]').each(function() {
+		$(this).attr('target', '_blank');
+    });
+    
+    
 });
