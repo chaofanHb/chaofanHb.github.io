@@ -46,7 +46,7 @@ $( document ).ready(function() {
         repo: 'blogtalk',//仓库名称
         owner: 'chaofanHb',//仓库拥有者
         admin: ['chaofanHb'],
-        id: 1,      // Ensure uniqueness and length less than 50
+        id: "vue-animation",      // Ensure uniqueness and length less than 50
         distractionFreeMode: false  // Facebook-like distraction free mode
       })
     gitalk.render('gitalk-container')
