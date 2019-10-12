@@ -30,24 +30,34 @@ var windowScroll = function () {
  });
 };
 
-var initVueAnimationComment = function(){
-    var gitalk = new Gitalk({
+var getGitalk = function(id){
+    return new Gitalk({
         clientID: '9551248533449b4a4385', //Client ID
-      
         clientSecret: '2df193c2832debdf6d5bea6e676690d0bc7f81e3', //Client Secret
-      
         repo: 'blogtalk',//仓库名称
         owner: 'chaofanHb',//仓库拥有者
         admin: ['chaofanHb'],
-        id: "vue-animation",      // Ensure uniqueness and length less than 50
+        id: id,      // Ensure uniqueness and length less than 50
         distractionFreeMode: false  // Facebook-like distraction free mode
       })
+}
+
+window.initVueAnimationComment = function(){
+    var gitalk = getGitalk("vue-animation");
     gitalk.render('gitalk-container-vue-animation')
+}
+
+window.initYummyJekyllCKRJComment = function(){
+    var gitalk = getGitalk("Yummy-Jekyll-ckrj");
+    gitalk.render('gitalk-container-yummy-jekyll-ckrj')
+}
+window.initVueVantListComment = function(){
+    var gitalk = getGitalk("vue-vant-list");
+    gitalk.render('gitalk-container-vue-vant-list')
 }
 
 $( document ).ready(function() {
     windowScroll();
-    initVueAnimationComment();
 
     //为超链接加上target='_blank'属性
 	$('a[href^="http"]').each(function() {

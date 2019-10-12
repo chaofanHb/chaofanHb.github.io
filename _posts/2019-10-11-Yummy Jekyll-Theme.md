@@ -101,3 +101,11 @@ jekyll serve
 ![图片3]({{ site.url }}/assets/images/install-ruby-3.png)
 
 直接访问[http://localhost:4000](http://localhost:4000)就行了
+
+<div id="gitalk-container-yummy-jekyll-ckrj"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initYummyJekyllCKRJComment();
+  })
+</script>

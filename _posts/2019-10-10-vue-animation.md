@@ -74,3 +74,9 @@ route.meta.index需要在路由设置好，规定好顺序层次。
 npm run dev 运行即可。
 
 <div id="gitalk-container-vue-animation"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initVueAnimationComment();
+  })
+</script>
