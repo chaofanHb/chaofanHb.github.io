@@ -55,6 +55,18 @@ window.initVueVantListComment = function(){
     var gitalk = getGitalk("vue-vant-list");
     gitalk.render('gitalk-container-vue-vant-list')
 }
+window.initOperationComment = function(){
+    var gitalk = getGitalk("java-operation");
+    gitalk.render('gitalk-container-java-operation')
+}
+window.initParsingConcurrentHashMapComment = function(){
+    var gitalk = getGitalk("parsing-concurrentHashMap");
+    gitalk.render('gitalk-container-parsing-concurrentHashMap')
+}
+window.initMavenVersionComment = function(){
+    var gitalk = getGitalk("maven-version");
+    gitalk.render('gitalk-container-maven-version')
+}
 
 $( document ).ready(function() {
     windowScroll();

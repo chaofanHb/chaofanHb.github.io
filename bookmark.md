@@ -5,11 +5,9 @@ subtitle: <span class="mega-octicon octicon-repo"></span>&nbsp;&nbsp; To mark us
 menu: Bookmark
 ---
 
-## Java
-- [Dom4j](https://dom4j.github.io/) - Flexible XML framework
-- [Gson](https://github.com/google/gson) - Google Library to support JSON
-- [Xstream](http://x-stream.github.io/index.html) -  Serialize objects to XML and back again
-- [JAXB](https://jaxb.java.net/) - Java Architecture for XML Binding
+## Spring
+　　Spring大约分为20个模块，这些模块分为核心容器、数据访问/集成、Web、AOP、Instrumentation、消息和测试，如下图所示：
+![spring模块图]({{ site.url }}/assets/images/spring-module.png)
 
 ## Android
 - [Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader) - Powerful and flexible library for loading, caching and displaying images
