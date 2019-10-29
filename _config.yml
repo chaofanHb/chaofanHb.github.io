@@ -14,7 +14,7 @@ search: 度娘 # ex. Nice, France
 search_url: https://www.baidu.com
 oldBlog: 原博客
 oldBlog_url: https://blog.csdn.net/chaofan1996
-github_url: my_github_url # ex. https://github.com/DONGChuan
+github_url: https://github.com/chaofanHb # ex. https://github.com/DONGChuan
 github_username: # ex. DONGChuan
 description: description_of_your_web_site
 favicon: gtq.jpg # Image must be in assets/images
