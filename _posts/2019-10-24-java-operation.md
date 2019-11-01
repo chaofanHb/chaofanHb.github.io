@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 关于java的位运算
-categories: other operation
+categories: other operation java
 ---
 
 最近在看源码时，发现一些java基础有些记不清了。今天来回忆，整理一下。

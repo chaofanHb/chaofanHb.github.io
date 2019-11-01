@@ -1,7 +1,7 @@
 ---
 layout: post
 title: jdk8版本的ConcurrentHashMap解析
-categories: 源码阅读
+categories: 源码阅读 java
 ---
 
 今天是1024程序员节日！！！

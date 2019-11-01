@@ -6,16 +6,16 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: 可恶的光头强 # ex. I m Chuan
+title: 可恶的光头强 
 subtitle: 学而时习之，不亦说乎
-name: 可恶的光头强 # ex. DONGChuan
+name: 可恶的光头强 
 email: 969752912@qq.com
-search: 度娘 # ex. Nice, France
+search: 度娘 
 search_url: https://www.baidu.com
 oldBlog: 原博客
 oldBlog_url: https://blog.csdn.net/chaofan1996
-github_url: https://github.com/chaofanHb # ex. https://github.com/DONGChuan
-github_username: # ex. DONGChuan
+github_url: https://github.com/chaofanHb 
+github_username: chaofanHb
 description: description_of_your_web_site
 favicon: gtq.jpg # Image must be in assets/images
 repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io

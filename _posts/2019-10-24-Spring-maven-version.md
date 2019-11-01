@@ -1,7 +1,7 @@
 ---
 layout: post
 title: maven统一指定spring包版本
-categories: Spring maven
+categories: Spring maven java
 ---
 
 刚查看了Spring的官网，发现一个统一配置Spring的方法，记录下来

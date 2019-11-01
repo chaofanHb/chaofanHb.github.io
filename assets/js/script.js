@@ -68,6 +68,67 @@ window.initMavenVersionComment = function(){
     gitalk.render('gitalk-container-maven-version')
 }
 
+window.initJVMAComment = function(){
+    var gitalk = getGitalk("jvm-a");
+    gitalk.render('gitalk-container-jvm-a')
+}
+window.initJVMBComment = function(){
+    var gitalk = getGitalk("jvm-b");
+    gitalk.render('gitalk-container-jvm-b')
+}
+window.initJVMCComment = function(){
+    var gitalk = getGitalk("jvm-c");
+    gitalk.render('gitalk-container-jvm-c')
+}
+window.initJVMDComment = function(){
+    var gitalk = getGitalk("jvm-d");
+    gitalk.render('gitalk-container-jvm-d')
+}
+window.initJVMEComment = function(){
+    var gitalk = getGitalk("jvm-e");
+    gitalk.render('gitalk-container-jvm-e')
+}
+window.initJVMFComment = function(){
+    var gitalk = getGitalk("jvm-f");
+    gitalk.render('gitalk-container-jvm-f')
+}
+window.initJVMGComment = function(){
+    var gitalk = getGitalk("jvm-g");
+    gitalk.render('gitalk-container-jvm-g')
+}
+window.initJVMHComment = function(){
+    var gitalk = getGitalk("jvm-h");
+    gitalk.render('gitalk-container-jvm-h')
+}
+window.initJVMIComment = function(){
+    var gitalk = getGitalk("jvm-i");
+    gitalk.render('gitalk-container-jvm-i')
+}
+window.initJVMJComment = function(){
+    var gitalk = getGitalk("jvm-j");
+    gitalk.render('gitalk-container-jvm-j')
+}
+window.initJVMKComment = function(){
+    var gitalk = getGitalk("jvm-k");
+    gitalk.render('gitalk-container-jvm-k')
+}
+window.initJVMLComment = function(){
+    var gitalk = getGitalk("jvm-l");
+    gitalk.render('gitalk-container-jvm-l')
+}
+window.initJVMMComment = function(){
+    var gitalk = getGitalk("jvm-m");
+    gitalk.render('gitalk-container-jvm-m')
+}
+window.initJVMNComment = function(){
+    var gitalk = getGitalk("jvm-n");
+    gitalk.render('gitalk-container-jvm-n')
+}
+window.initJVMZComment = function(){
+    var gitalk = getGitalk("jvm-z");
+    gitalk.render('gitalk-container-jvm-z')
+}
+
 $( document ).ready(function() {
     windowScroll();
 
