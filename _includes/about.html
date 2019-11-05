@@ -1,76 +1,92 @@
 <div class="about row">
 
-    <div class="col-md-4">
+    <div class="col-md-4" style="text-align: center;">
+        <div class="col-md-6" style="padding: 0px;">
+                <img src="/assets/images/gtq1.jpg" width="150px" height="150px" style="padding: 15px; -moz-box-shadow:0px 0px 1px #333333; -webkit-box-shadow:0px 0px 1px #333333; box-shadow:0px 0px 1px #333333;" />
+        </div>
+        <div class="col-md-6" style="padding: 0px; color: #8f8f8f; text-align: left; font-size: 13px;">
+            <h3 style="color: black; margin-top: 0px;">可恶的光头强</h3>
+            职业：web开发<br/>
+            开发经验：3年<br/>
+            个人说明：此博客是为了记录学习中比较实用的知识点，正所谓好记性不如烂笔头，且行且回忆
+        </div>
         
+
+        <iframe id="video1" style="width: 100%; margin-left: 5px;" frameborder="no" border="0" marginwidth="0" marginheight="0" src="//music.163.com/outchain/player?type=2&id=513363565&auto=1&height=32"></iframe>
+    
+        <img src="/assets/images/my.png" width="150px" height="150px" />
+        <p style="color: #ccc;">深入了解</p>
+
     </div>
 
     <div class="col-md-8">
+        <div style="padding-left: 30px;border-left: 1px solid #ccc;">
+            <h2>About me</h2>
 
-        <h2>About me</h2>
+            <p>BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla</p>
 
-        <p>BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla BlaBlaBla</p>
+            <h2>Contact</h2>
 
-        <h2>Contact</h2>
+            <ul>
+                <li>Email：<a href="mailto:{{ site.email }}" target="_top">{{ site.email }}</a></li>
+                <li>GitHub：<a href="{{ site.github_url }}">{{ site.github_url }}</a></li>
+            </ul>
 
-        <ul>
-            <li>Email：<a href="mailto:{{ site.email }}" target="_top">{{ site.email }}</a></li>
-            <li>GitHub：<a href="{{ site.github_url }}">{{ site.github_url }}</a></li>
-        </ul>
+            <h2>Skill Keywords</h2>
 
-        <h2>Skill Keywords</h2>
-
-        {% if site.skill_software_keywords %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Software Engineer Keywords</h3>
+            {% if site.skill_software_keywords %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Software Engineer Keywords</h3>
+                </div>
+                <div class="panel-body">
+                    {% for keyword in site.skill_software_keywords %}
+                    <button class="btn btn-default" type="button">{{ keyword }}</button>
+                    {% endfor %}
+                </div>
             </div>
-            <div class="panel-body">
-                {% for keyword in site.skill_software_keywords %}
-                <button class="btn btn-default" type="button">{{ keyword }}</button>
-                {% endfor %}
+            {% endif %}
+
+            {% if site.skill_j2ee_keywords %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">J2EE Developer Keywords</h3>
+                </div>
+                <div class="panel-body">
+                    {% for keyword in site.skill_j2ee_keywords %}
+                    <button class="btn btn-default" type="button">{{ keyword }}</button>
+                    {% endfor %}
+                </div>
             </div>
+            {% endif %}
+
+            {% if site.skill_mobile_app_keywords %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Mobile Developer Keywords</h3>
+                </div>
+                <div class="panel-body">
+                    {% for keyword in site.skill_mobile_app_keywords %}
+                    <button class="btn btn-default" type="button">{{ keyword }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
+            {% if site.skill_web_keywords %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Web Developer Keywords</h3>
+                </div>
+                <div class="panel-body">
+                    {% for keyword in site.skill_web_keywords %}
+                    <button class="btn btn-default" type="button">{{ keyword }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endif %}
+
         </div>
-        {% endif %}
-
-        {% if site.skill_j2ee_keywords %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">J2EE Developer Keywords</h3>
-            </div>
-            <div class="panel-body">
-                {% for keyword in site.skill_j2ee_keywords %}
-                <button class="btn btn-default" type="button">{{ keyword }}</button>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if site.skill_mobile_app_keywords %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Mobile Developer Keywords</h3>
-            </div>
-            <div class="panel-body">
-                {% for keyword in site.skill_mobile_app_keywords %}
-                <button class="btn btn-default" type="button">{{ keyword }}</button>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if site.skill_web_keywords %}
-        <div class="panel panel-default">
-            <div class="panel-heading">
-                <h3 class="panel-title">Web Developer Keywords</h3>
-            </div>
-            <div class="panel-body">
-                {% for keyword in site.skill_web_keywords %}
-                <button class="btn btn-default" type="button">{{ keyword }}</button>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
 
     </div>
-
 </div>
