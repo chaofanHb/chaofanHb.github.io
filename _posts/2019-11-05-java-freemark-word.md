@@ -129,3 +129,13 @@ ${imagesBase64String} 和 ${imagesXmlHrefString}这两个是我们手动加进�
 ![图片4]({{ site.url }}/assets/images/word4.png)
 
 到此结束了。
+
+[源码链接](https://github.com/chaofanHb/ExpordWord)
+
+<div id="gitalk-container-java-word"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initJavaWordComment();
+  })
+</script>

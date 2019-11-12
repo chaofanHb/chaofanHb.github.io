@@ -128,6 +128,10 @@ window.initJVMZComment = function(){
     var gitalk = getGitalk("jvm-z");
     gitalk.render('gitalk-container-jvm-z')
 }
+window.initJavaWordComment = function(){
+    var gitalk = getGitalk("java-word");
+    gitalk.render('gitalk-container-java-word')
+}
 
 $( document ).ready(function() {
     windowScroll();

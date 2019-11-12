@@ -9,16 +9,32 @@ menu: Bookmark
 　　Spring大约分为20个模块，这些模块分为核心容器、数据访问/集成、Web、AOP、Instrumentation、消息和测试，如下图所示：
 ![spring模块图]({{ site.url }}/assets/images/spring-module.png)
 
-## Android
-- [Universal-Image-Loader](https://github.com/nostra13/Android-Universal-Image-Loader) - Powerful and flexible library for loading, caching and displaying images
+## Maven
+- 使用maven下载jar包，经常会遇到下载失败的情况,如果失败的jar包过多,或是不清楚到底有那些jar包在下载过程中出现了问题.可通过maven命令重新批量下载未成功的jar包.
+
+        mvn clean install -U 
+
 - [greenDAO](http://greendao-orm.com/) - greenDAO is a light and fast ORM solution that maps objects to SQLite databases
 - [EventBus](http://greenrobot.github.io/EventBus/) - Android optimized event bus that simplifies communication
 
-## PHP
-- [Idiorm](https://github.com/j4mie/idiorm/) - A lightweight nearly-zero-config object-relational mapper and fluent query builder for PHP5
-- [GitElephant](https://github.com/matteosister/GitElephant) - An abstraction layer to manage your git repositories with php
-- [Propel](https://github.com/propelorm/Propel) - ORM for PHP5
-- [SimpleDOM](https://code.google.com/archive/p/simpledom/) - Built upon SimpleXML and provids DOM methods using SimpleXML's syntax.
+## jdk
+- 生成密钥
+
+		keytool -genkey -alias cas -keyalg RSA -keysize 2048 -keypass changeit -storepass changeit -keystore casexample.keystore -dname "CN=cas.example.org,OU=casexample.com,O=casexample,L=casexample,ST=casexample,C=CN" -deststoretype pkcs12
+
+- 导出公钥
+
+		keytool -export -keystore d:\zlex.keystore -alias www.zlex.org -file d:\zlex.cer -rfc
+
+- 导入公钥
+
+		keytool -import -v -trustcacerts -alias taobao -file taobao.cer -storepass changeit -keystore %JAVA_HOME%/jre/lib/security/cacerts
+
+- 查看密钥
+
+		keytool -list -v -keystore d:\zlex.keystore -storepass changeit
+		keytool -list -v -alias cas -keystore %JAVA_HOME%/jre/lib/security/cacerts -storepass changeit
+
 
 ### Symfony
 - [NelmioApiDocBundle](https://github.com/nelmio/NelmioApiDocBundle) - Generate a decent documentation for your APIs
