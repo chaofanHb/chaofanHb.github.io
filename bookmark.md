@@ -35,25 +35,18 @@ menu: Bookmark
 		keytool -list -v -keystore d:\zlex.keystore -storepass changeit
 		keytool -list -v -alias cas -keystore %JAVA_HOME%/jre/lib/security/cacerts -storepass changeit
 
+## URL传参问题
 
-### Symfony
-- [NelmioApiDocBundle](https://github.com/nelmio/NelmioApiDocBundle) - Generate a decent documentation for your APIs
-- [FOSRestBundle](http://symfony.com/doc/current/bundles/FOSRestBundle/index.html) - Creat a REST API with Symfony2
+- 原因分析：参数在传递过程中经历的几次编码和解码标准不同，导致加号、空格等字符的错误websites
+- 解决方案：将post请求的参数中 ，含有+号的，统统采用%2B 去替换，这是URL的协议问题。
 
-## Javascript
-- [fullPage.js](http://alvarotrigo.com/fullPage/) - To create fullscreen scrolling websites / single page websites
-- [lunr.js](http://lunrjs.com/) - Simple full-text search
-- [Trip.js](http://eragonj.github.io/Trip.js/index.html) - Help you customize a tutorial trip easily with more flexibilities
-- [Moment.js](http://momentjs.com/) - Parse, validate, manipulate, and display dates in JavaScript.
-- [Underscore.js](http://underscorejs.org/) - It provides a whole mess of useful functional programming helpers without extending any built-in objects.
+## Fiddler在java中抓包
 
-### AngularJs
-- [Protractor](http://angular.github.io/protractor) - End-to-end test framework for AngularJS applications
-- [angular-media-player](https://github.com/colthreepv/angular-media-player) - Directive for audio and video
-- [Smart table](http://lorenzofox3.github.io/smart-table-website/) - Module to easily display data in a table
-- [ng-table](http://esvit.github.io/ng-table/#/) - Module to easily display data in a table
-- [ngToast](https://github.com/tameraydin/ngToast) - AngularJS toast
-- [ANGM-GENERATOR](http://newaeonweb.com.br/generator-angm/) - AngularJS Yeoman Generator
+下载[Fiddler](https://www.telerik.com/download/fiddler)
+
+	System.setProperty("http.proxySet", "true");
+	System.setProperty("http.proxyHost", "127.0.0.1");
+	System.setProperty("http.proxyPort", "8888");
 
 ### Node.js
 - [utility](https://github.com/node-modules/utility) - A collection of useful utilities

@@ -157,3 +157,12 @@ categories: maven java
             <version>1.2</version>
         </dependency>
     </dependencys>
+
+
+<div id="gitalk-container-lib-transform"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initLibTransformComment();
+  })
+</script>

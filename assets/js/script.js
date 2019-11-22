@@ -133,6 +133,23 @@ window.initJavaWordComment = function(){
     gitalk.render('gitalk-container-java-word')
 }
 
+window.initCasServerComment = function(){
+    var gitalk = getGitalk("cas-server");
+    gitalk.render('gitalk-container-cas-server')
+}
+window.initLibTransformComment = function(){
+    var gitalk = getGitalk("lib-transform");
+    gitalk.render('gitalk-container-lib-transform')
+}
+window.initHttpRpcComment = function(){
+    var gitalk = getGitalk("http-rpc");
+    gitalk.render('gitalk-container-http-rpc')
+}
+window.initOkhttp3RpcComment = function(){
+    var gitalk = getGitalk("okhttp3-rpc");
+    gitalk.render('gitalk-container-okhttp3-rpc')
+}
+
 $( document ).ready(function() {
     windowScroll();
 

@@ -155,3 +155,10 @@ Tomcat默认情况下是打开HTTP服务的，HTTPS的服务是需要手动开�
 
 启动tomcat。
 
+<div id="gitalk-container-cas-server"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initCasServerComment();
+  })
+</script>
