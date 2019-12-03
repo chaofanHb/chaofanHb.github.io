@@ -14,9 +14,6 @@ menu: Bookmark
 
         mvn clean install -U 
 
-- [greenDAO](http://greendao-orm.com/) - greenDAO is a light and fast ORM solution that maps objects to SQLite databases
-- [EventBus](http://greenrobot.github.io/EventBus/) - Android optimized event bus that simplifies communication
-
 ## jdk
 - 生成密钥
 
@@ -40,21 +37,31 @@ menu: Bookmark
 - 原因分析：参数在传递过程中经历的几次编码和解码标准不同，导致加号、空格等字符的错误websites
 - 解决方案：将post请求的参数中 ，含有+号的，统统采用%2B 去替换，这是URL的协议问题。
 
+例如：
+okhttp3（3.8.0版本）
+
+	String str ="a=123456&b=gjv++23";
+	str.replaceAll("\\+", "%2B")  //将+号替换成%2B
+	RequestBody body = RequestBody.create(FORM, str);
+
 ## Fiddler在java中抓包
 
 下载[Fiddler](https://www.telerik.com/download/fiddler)
+- okhttp抓包：
 
 	System.setProperty("http.proxySet", "true");
 	System.setProperty("http.proxyHost", "127.0.0.1");
 	System.setProperty("http.proxyPort", "8888");
 
-### Node.js
-- [utility](https://github.com/node-modules/utility) - A collection of useful utilities
-- [cheerio](https://github.com/cheeriojs/cheerio) - Implementation of core jQuery designed specifically for the server
-- [mongoose](http://mongoosejs.com/) - elegant mongodb object modeling for node.js
-- [SuperAgent](http://visionmedia.github.io/superagent/) - Super Agent is light-weight progressive ajax API
-- [connect-mongo](https://github.com/kcbanner/connect-mongo) - MongoDB session store for Express and Connect
-- [Morgan](https://github.com/expressjs/morgan) - HTTP request logger middleware for node.js
+- HttpClient抓包：
+
+	HttpHost proxy = new HttpHost("127.0.0.1", 8888);
+	RequestConfig requestConfig = RequestConfig.custom().setProxy(proxy).build();
+	HttpClient httpclient = HttpClients.custom().setDefaultRequestConfig(requestConfig).build();
+
+## 中文排序
+
+	Comparator<Object> CHINA_COMPARE = Collator.getInstance(java.util.Locale.CHINA);
 
 ## CSS
 - [loaders.css](https://connoratherton.com/loaders) - Delightful and performance-focused pure css loading animations

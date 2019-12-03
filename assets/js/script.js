@@ -150,6 +150,23 @@ window.initOkhttp3RpcComment = function(){
     gitalk.render('gitalk-container-okhttp3-rpc')
 }
 
+window.initDockerWindowsInstallComment = function(){
+    var gitalk = getGitalk("docker-windows-install");
+    gitalk.render('gitalk-container-docker-windows-install')
+}
+window.initDockerCommandComment = function(){
+    var gitalk = getGitalk("docker-command");
+    gitalk.render('gitalk-container-docker-command')
+}
+window.initDockerFastDFSDevComment = function(){
+    var gitalk = getGitalk("docker-fastdfs-dev");
+    gitalk.render('gitalk-container-docker-fastdfs-dev')
+}
+window.initFastDFSSpringbootComment = function(){
+    var gitalk = getGitalk("fastdfs-springboot");
+    gitalk.render('gitalk-container-fastdfs-springboot')
+}
+
 $( document ).ready(function() {
     windowScroll();
 
