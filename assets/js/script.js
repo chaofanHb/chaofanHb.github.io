@@ -167,6 +167,11 @@ window.initFastDFSSpringbootComment = function(){
     gitalk.render('gitalk-container-fastdfs-springboot')
 }
 
+window.initDingPiercedComment = function(){
+    var gitalk = getGitalk("ding-pierced");
+    gitalk.render('gitalk-container-ding-pierced')
+}
+
 $( document ).ready(function() {
     windowScroll();
 
