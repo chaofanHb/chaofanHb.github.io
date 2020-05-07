@@ -10,7 +10,9 @@ tags: [jekyll]
 ## Yummy-Jekyll的项目环境搭建
 
 ### 1.安装ruby
+
 [下载ruby2.2.6](https://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.6-x64.exe)
+
 [下载DevKit](https://dl.bintray.com/oneclick/rubyinstaller/DevKit-mingw64-64-4.7.2-20130224-1432-sfx.exe)
 
 为什么下载2.2.6版本的呢，因为[Yummy-Jekyll](https://github.com/DONGChuan/Yummy-Jekyll)项目里的依赖有一个nokogiri 1.6.7-x64-mingw32包，该包需要ruby version < 2.3, >= 1.9.2。
@@ -60,15 +62,20 @@ ruby dk.rb init
 gem install bower
 {% endhighlight %}
 
-{% highlight ruby %}
-gem install bundle -v '1.17.0'
-{% endhighlight %}
-
 这里的bundle最好带上版本，不然默认安装最新的，最新的bundle要求ruby version >= 2.3.0。
+{% highlight ruby %}
+gem install bundler -v '1.17.0'
+{% endhighlight %}
+
+添加国内镜像，[实际参考](https://gems.ruby-china.com/)
+{% highlight ruby %}
+bundle config mirror.https://rubygems.org https://gems.ruby-china.com
+{% endhighlight %}
 
 {% highlight ruby %}
-gem install jekyll
+bundle install
 {% endhighlight %}
+
 
 这里安装jekyll，[jekyll指南](http://jekyllcn.com/docs/home/)
 
