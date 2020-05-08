@@ -31,16 +31,21 @@ if(!isTouch){
     console.log(11)
     $("#overflowDiv").css({"display":"none"});
 }else{
-    $("#overflowDiv").click(function(){
-    var width = $("#overflowDiv").css("width");
-    if(width === '274px'){
-        $("#overflowDiv").css("width", "350px");
-        $("#musicBgm").stop().animate({"right":"-270px"})
-    }else if(width === '350px'){
-        $("#overflowDiv").css("width", "274px");
-        $("#musicBgm").stop().animate({"right":"0px"})
-    }
-})
+    $("body").on("touchstart", function(e) {
+        if(e.target.id === 'overflowDiv'){
+            var width = $("#overflowDiv").css("width");
+            if(width === '274px'){
+                $("#overflowDiv").css("width", "350px");
+                $("#musicBgm").stop().animate({"right":"-270px"})
+            }else if(width === '350px'){
+                $("#overflowDiv").css("width", "274px");
+                $("#musicBgm").stop().animate({"right":"0px"})
+            }
+        }else{
+            $("#overflowDiv").css("width", "350px");
+            $("#musicBgm").stop().animate({"right":"-270px"})
+        }
+    });
 }
 
 
