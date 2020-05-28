@@ -2,17 +2,22 @@
 $(document).ready(function(e) {
 	$(".js_cell_case").click(function(){
 		console.log(0);
-		url = $(this).attr("data-url"); // 要加载的iframe
-		title = $(this).attr("data-name");
-		art.dialog.open(url,{
-			lock: true,
-			title: title ,
-			width:900,
-			drag:false,
-			opacity:0.3,
-			background:"#000",
-			height: 500
-		});
+		var url = $(this).attr("data-url"); // 要加载的iframe
+		var title = $(this).attr("data-name");
+		if(url.indexOf('http')>=0){
+			window.location.href=url;
+		}else{
+			art.dialog.open(url,{
+				lock: true,
+				title: title ,
+				width:900,
+				drag:false,
+				opacity:0.3,
+				background:"#000",
+				height: 500
+			});
+		}
+		
 	});
 	<!--设置案例宽度-->
 	var len = $("#js_wrap_case").children().length;
@@ -27,7 +32,7 @@ $(document).ready(function(e) {
 		$("#js_wrap_case").children().eq(index).addClass("focus").siblings().removeClass("focus");
 		
 		var index = $(this).index();
-		$("#js_wrap_case").css({
+		$(".container_case").css({
 			"left": -index*1000
 		});
 		console.log()

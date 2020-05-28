@@ -401,8 +401,8 @@ transform: translate(0px,1000px);
 .jingli_info{position:absolute;width:350px;left:30px;text-align:left;font-size:14px;}
 
 /*个人技能*/
-.bg_fff{background:url(../images/bg_jn.jpg)}
-.img_bg{background-image:url(../images/bg_jn.png);background-repeat:no-repeat;}
+.bg_fff{background:url(../images/bg_jn1.jpg)}
+.img_bg{background-image:url(../images/bg_jn1.png);background-repeat:no-repeat;}
 .title_jn{background-position:center top;display:inline-block;height:41px;width:167px;
 transform: scale(0);
 -moz-transform: scale(0);
@@ -486,8 +486,10 @@ transform: translate(0px,1500px);
 }
 
 /*案例*/
-.container_case,.list_case {width:1000px;height:324px;overflow:hidden;}
+.container_case,.list_case {width:2000px;height:324px;overflow:hidden;}
 .container_case{opacity:0;
+	position: relative;
+	left: 0;
 transform: translate(0px,500px);
 -moz-transform: translate(0px,500px);
 -webkit-transform: translate(0px,500px);
@@ -497,7 +499,7 @@ transform: translate(0px,500px);
 .list_case , .list_case li{float:left;}
 .list_case{}
 .wrap_case .focus {}
-.list_case li{overflow:hidden;width:249px;height:160px;margin:0 1px 1px 0;float:left;position:relative;}
+.list_case li{overflow:hidden;width:249px;height:300px;margin:0 1px 1px 0;float:left;position:relative;}
 .list_case li a{display:block;position:relative;width:100%;height:100%;overflow:hidden;}
 .list_case li .zz{opacity:0;}
 .case_info{background:#212325;position:absolute;width:100%;height:00%;height:50px;line-height:25px;bottom:-50px;z-index:3;}
