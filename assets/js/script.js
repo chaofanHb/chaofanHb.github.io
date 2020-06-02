@@ -179,7 +179,11 @@ $( document ).ready(function() {
 	$('a[href^="http"]').each(function() {
 		$(this).attr('target', '_blank');
     });
-    
+    $('body').ripples({
+        resolution: 512,
+        dropRadius: 20,
+        perturbance: 0.04,
+    });
 
     // 小心心效果
     (function(window,document,undefined){
