@@ -5,16 +5,7 @@ css: ['index.css', 'sidebar-popular-repo.css']
 ---
 <section class="jumbotron">
     <div class="container">
-        <h1>
-            <span class="windmill2">
-                <span class="pillar"></span>
-                <span class="axis">
-                <span class="swing"></span>
-                <span class="swing2"></span>
-                <span class="swing3"></span>
-                </span>
-            </span>
-            {{ site.subtitle }}</h1>
+        <h1 id="windmi_index">{{ site.subtitle }}</h1>
         <div id="jumbotron-meta-info">
             {% if site.search %}
             <span class="meta-info">
@@ -29,8 +20,10 @@ css: ['index.css', 'sidebar-popular-repo.css']
         </div>
     </div>
 </section>
-<marquee behavior="alternate" height="20px" onMouseOut="this.start()" onMouseOver="this.stop()"><span style="font-size: 20px;color: #4183c4;" class="octicon octicon-octoface"></span></marquee>
-<hr style="margin: 0;" >
+<div id="indexMarquee">
+
+</div>
+
 <section class="content container">
 
     <div class="row">
@@ -70,3 +63,25 @@ css: ['index.css', 'sidebar-popular-repo.css']
 
 </section>
 
+<script>
+    
+    $(document).ready(function(){
+        var isTouch_indexHtml = ("ontouchstart" in window) ? true : false;
+        if(!isTouch_indexHtml){
+            // 添加marquee文字走马灯
+            $("#indexMarquee").html('<marquee behavior="alternate" height="20px" onMouseOut="this.start()" onMouseOver="this.stop()">\
+                <span style="font-size: 20px;color: #4183c4;" class="octicon octicon-octoface"></span>\
+            </marquee>\
+            <hr style="margin: 0;" >');
+            // 添加风车
+            $("#windmi_index").prepend('<span class="windmill2">\
+                <span class="pillar"></span>\
+                    <span class="axis">\
+                    <span class="swing"></span>\
+                    <span class="swing2"></span>\
+                    <span class="swing3"></span>\
+                </span>\
+            </span>');
+        }
+    });
+</script>
