@@ -1,0 +1,8 @@
+﻿@charset "utf-8";
+* { margin: 0; padding: 0; }
+
+#code { width: 40%; min-width: 450px; height: 450px; background-color: rgba(0, 0, 0, 0.3); position: fixed; left: 30%; top: 20%; border-radius: 10px; font-size: 16px; line-height: 22px; font-weitht: bold; }
+#author { position: fixed; bottom: 10px; left: 48%; }
+#author a { text-decoration: none; }
+.key { color: orange; font-family: ''; }
+.comment { color: #e6e6e6; font-weight: 800; }

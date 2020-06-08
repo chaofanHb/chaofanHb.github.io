@@ -21,7 +21,7 @@
 }
 
 .site-header.site-header-nav-scrolled a {
-    color: #2e2e2e;
+    color: #2e2e2e!important;
 }
 
 .site-header.site-header-nav-scrolled #site-header-brand {

@@ -172,6 +172,100 @@ window.initDingPiercedComment = function(){
     gitalk.render('gitalk-container-ding-pierced')
 }
 
+//动态加载一个js/css文件
+function loadjscssfile(filename, filetype, callback){
+    if (filetype=="js"){
+    var fileref=document.createElement('script')
+    fileref.setAttribute("type","text/javascript")
+    fileref.setAttribute("src",filename)
+    }
+    else if (filetype=="css"){
+    var fileref=document.createElement("link")
+    fileref.setAttribute("rel","stylesheet")
+    fileref.setAttribute("type","text/css")
+    fileref.setAttribute("href",filename)
+    }
+
+    if (fileref.addEventListener) {
+        fileref.addEventListener('load', function () {
+          callback();
+        }, false);
+      } else if (fileref.attachEvent) {
+        fileref.attachEvent('onreadystatechange', function () {
+          var target = window.event.srcElement;
+          if (target.readyState == 'loaded') {
+            callback();
+          }
+        });
+      }
+    
+
+    if (typeof fileref!="undefined")
+    document.getElementsByTagName("head")[0].appendChild(fileref)
+}
+    
+
+//移动已经加载过的js/css
+function removejscssfile(filename,filetype){
+    var targetelement=(filetype=="js")? "script" :(filetype=="css")? "link" : "none"
+    var targetattr=(filetype=="js")?"src" : (filetype=="css")? "href" :"none"
+    var allsuspects=document.getElementsByTagName(targetelement)
+    for (var i=allsuspects.length; i>=0;i--){
+    if (allsuspects[i] &&allsuspects[i].getAttribute(targetattr)!=null && allsuspects[i].getAttribute(targetattr).indexOf(filename)!=-1)
+     allsuspects[i].parentNode.removeChild(allsuspects[i])
+    }
+}
+    
+
+//nva点击的伪路由
+var hebin,hebin2;
+function navClick(href){
+    $.ajax({
+        url: href,
+        type: "GET",
+        dataType: "html",
+        success: function(data) {  
+            removejscssfile('/assets/css/indexs.css','css')
+            hebin = $(data.substring(data.indexOf('<body>'), data.indexOf('</body>')+7));
+            //动态添加js
+            $("#routeContent").html($(hebin.get(3)).html());
+            $($(hebin.get(5)).children().get(3)).appendTo("#routeContent")
+            //动态添加css
+            hebin2 = $(data.substring(data.indexOf('<head>'), data.indexOf('</head>')+7));
+            var dataSize = hebin2.length;
+            for(var i=39; i<dataSize; i++){
+                var t = hebin2.get(i);
+                if(t.nodeName && t.nodeName === 'LINK'){
+                    $(t).appendTo("#routeContent")
+                }
+            }
+
+            if(href === '/'){
+                var month = new Date().getMonth();
+                if(month == 0 || month == 1){
+                    $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+                }
+                $("#xuehua").show();
+                $(".site-header").css("background", "");
+                $(".site-header #site-header-brand").css("color","#fff")
+                $(".site-header .site-header-nav-item").css("color","#9acfea")
+            }else{
+                $("#xuehua").hide();
+                $(".site-header").css("background", "#fff");
+                $(".site-header #site-header-brand").css("color","#000")
+                $(".site-header .site-header-nav-item").css("color","#000")
+            }
+
+            //为超链接加上target='_blank'属性
+            $('a[href^="http"]').each(function() {
+                $(this).attr('target', '_blank');
+            });
+            
+            
+        }
+    });
+}
+
 $( document ).ready(function() {
     windowScroll();
 
@@ -179,11 +273,7 @@ $( document ).ready(function() {
 	$('a[href^="http"]').each(function() {
 		$(this).attr('target', '_blank');
     });
-    $('body').ripples({
-        resolution: 512,
-        dropRadius: 20,
-        perturbance: 0.04,
-    });
+
 
     // 小心心效果
     (function(window,document,undefined){
@@ -252,4 +342,41 @@ $( document ).ready(function() {
         return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
         }
         })(window,document);
+
+
+        
+        //定时雪花效果
+        var month = new Date().getMonth();
+        if(month == 0 || month == 1){
+            loadjscssfile('/assets/snowflakeBackground/css/style.css','css', function(){
+                loadjscssfile('/assets/snowflakeBackground/js/ThreeCanvas.js','js', function(){
+                    loadjscssfile('/assets/snowflakeBackground/js/Snow.js','js', function(){
+                        loadjscssfile('/assets/snowflakeBackground/js/snowFall.js','js', function(){
+                            $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+                            $.snowFall({
+                                //创建粒子数量，密度
+                                particleNo: 500,
+                                //粒子下拉速度
+                                particleSpeed:40,
+                                //粒子在垂直（Y轴）方向运动范围
+                                particleY_Range:1300,
+                                //粒子在垂直（X轴）方向运动范围
+                                particleX_Range:1000,
+                                //是否绑定鼠标事件
+                                bindMouse: false,
+                                //相机离Z轴原点距离
+                                zIndex:1000,
+                              //摄像机视野角度
+                                angle:55,
+                                wind_weight:0
+                                });
+                        })
+                    })
+                })
+            })
+            
+            
+            
+        }
+        
 });
