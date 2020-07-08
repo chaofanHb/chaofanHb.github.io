@@ -48,18 +48,10 @@ categories: docker
 
 ## 3.初始化 docker 并配置阿里云镜像
 
-### 3.1创建虚拟机并配置镜像仓库
+双击桌面的Kitematic (Alpha)应用创建虚拟机
 
-进入到 docker toolbox 安装目录下,执行下面命令
 
-    //<your accelerate address>为你的阿里云镜像加速器地址
-    docker-machine create --engine-registry-mirror=<your accelerate address> -d virtualbox default
-
-安装成功
-
-![图片10]({{ site.url }}/assets/images/docker-install9.png)
-
-### 3.2初始化 docker
+### 3.1初始化 docker
 
 通过 Docker 客户端访问 Docker 服务
 以管理员方式打开 Docker Quickstart Terminal
@@ -86,6 +78,15 @@ bash.exe 这个位于 /git/bin/ 目录下，选中就行了
     eval "$(docker-machine env default)"
     docker info
 
+### 3.2配置阿里云镜像加速器
+镜像配置在/etc/docker/daemon.json(可通过挂载目录传输进去),新建daemon.json
+
+    {
+  
+        "registry-mirrors": ["https://fc1fnm21111z.mirror.aliyuncs.com"]
+
+    }
+
 镜像配置好了
 ![图片15]({{ site.url }}/assets/images/docker-install14.png)
 
@@ -94,6 +95,26 @@ bash.exe 这个位于 /git/bin/ 目录下，选中就行了
 
     docker ps #查看镜像
     docekr version #查看版本
+
+## 4.优化docker存储占用c盘问题
+
+这个问题主要是由于虚拟硬盘默认安装在C盘下导致的，因此需要在windows下移动 Oracle VM VirtualBox的虚拟硬盘，步骤如下：
+
+- 1.默认虚拟盘在C:\Users\A\.docker\machine\machines\default\disk.vmdk
+
+- 2.备份所有C:\Users\A\.docker的文件到D盘
+
+- 3.启动Oracle VM VirtualBox在设置-存储删除存储介质下面的控制器（此操作会删除c盘虚拟机的存储文件，配置文件还在，.docker最好不要删除）
+
+- 4.在Oracle VM VirtualBox的安装目录下执行：C:\Program Files\Oracle\VirtualBox>vboxmanage internalcommands sethduuid "D:\Users\A\.docker\machine\machines\default\disk.vmdk"，此举是修改disk.vmdk的UUID以免冲突
+
+- 5.启动Oracle VM VirtualBox在设置-存储增加新的控件器，分别添加新虚拟光驱和虚拟硬盘，且分别指向备份到D盘下的ISO和vmdk文件
+
+
+- 6.启动Oracle VM VirtualBox在管理-虚拟介质管理器里可以对原来C盘下的虚拟光驱和虚拟硬盘进行删除，这样可以节省C盘的磁盘空间
+
+- 7.修改D:\.docker\machine\machines\default\config.json里的路径,重新启动docker一切OK
+
 
 
 <div id="gitalk-container-docker-windows-install"></div>

@@ -172,6 +172,26 @@ window.initDingPiercedComment = function(){
     gitalk.render('gitalk-container-ding-pierced')
 }
 
+window.initOracleOverComment = function(){
+    var gitalk = getGitalk("oracle-over");
+    gitalk.render('gitalk-container-oracle-over')
+}
+
+window.initDockerMysqlComment = function(){
+    var gitalk = getGitalk("docker-mysql");
+    gitalk.render('gitalk-container-docker-mysql')
+}
+
+window.initDockerOracleInstallComment = function(){
+    var gitalk = getGitalk("docker-oracle-install");
+    gitalk.render('gitalk-container-docker-oracle-install')
+}
+
+window.initSpringbootSeataDemoComment = function(){
+    var gitalk = getGitalk("springboot-seata-demo");
+    gitalk.render('gitalk-container-springboot-seata-demo')
+}
+
 //动态加载一个js/css文件
 function loadjscssfile(filename, filetype, callback){
     if (filetype=="js"){
@@ -224,42 +244,45 @@ function navClick(href){
         url: href,
         type: "GET",
         dataType: "html",
-        success: function(data) {  
-            removejscssfile('/assets/css/indexs.css','css')
-            hebin = $(data.substring(data.indexOf('<body>'), data.indexOf('</body>')+7));
-            //动态添加js
-            $("#routeContent").html($(hebin.get(3)).html());
-            $($(hebin.get(5)).children().get(3)).appendTo("#routeContent")
-            //动态添加css
-            hebin2 = $(data.substring(data.indexOf('<head>'), data.indexOf('</head>')+7));
-            var dataSize = hebin2.length;
-            for(var i=39; i<dataSize; i++){
-                var t = hebin2.get(i);
-                if(t.nodeName && t.nodeName === 'LINK'){
-                    $(t).appendTo("#routeContent")
+        success: function(data) {
+                removejscssfile('/assets/css/indexs.css','css')
+                hebin = $(data.substring(data.indexOf('<body>'), data.indexOf('</body>')+7));
+                //动态添加js
+                $("#routeContent").html($(hebin.get(3)).html());
+                $($(hebin.get(5)).children().get(3)).appendTo("#routeContent")
+                //动态添加css
+                hebin2 = $(data.substring(data.indexOf('<head>'), data.indexOf('</head>')+7));
+                var dataSize = hebin2.length;
+                for(var i=39; i<dataSize; i++){
+                    var t = hebin2.get(i);
+                    if(t.nodeName && t.nodeName === 'LINK'){
+                        $(t).appendTo("#routeContent")
+                    }
                 }
-            }
-
-            if(href === '/'){
-                var month = new Date().getMonth();
-                if(month == 0 || month == 1){
-                    $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+    
+                if(href === '/'){
+                    var month = new Date().getMonth();
+                    if(month == 0 || month == 1){
+                        $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+                    }
+                    $("#xuehua").show();
+                    $(".site-header").css("background", "");
+                    $(".site-header #site-header-brand").css("color","#fff")
+                    $(".site-header .site-header-nav-item").css("color","#9acfea")
+                }else{
+                    $("#xuehua").hide();
+                    $(".site-header").css("background", "#fff");
+                    $(".site-header #site-header-brand").css("color","#000")
+                    $(".site-header .site-header-nav-item").css("color","#000")
                 }
-                $("#xuehua").show();
-                $(".site-header").css("background", "");
-                $(".site-header #site-header-brand").css("color","#fff")
-                $(".site-header .site-header-nav-item").css("color","#9acfea")
-            }else{
-                $("#xuehua").hide();
-                $(".site-header").css("background", "#fff");
-                $(".site-header #site-header-brand").css("color","#000")
-                $(".site-header .site-header-nav-item").css("color","#000")
-            }
+    
+                //为超链接加上target='_blank'属性
+                $('a[href^="http"]').each(function() {
+                    $(this).attr('target', '_blank');
+                });
 
-            //为超链接加上target='_blank'属性
-            $('a[href^="http"]').each(function() {
-                $(this).attr('target', '_blank');
-            });
+                $("#routeContent").animate({"opacity":"1"})
+            
             
             
         }
@@ -366,7 +389,7 @@ $( document ).ready(function() {
                                 bindMouse: false,
                                 //相机离Z轴原点距离
                                 zIndex:1000,
-                              //摄像机视野角度
+                                //摄像机视野角度
                                 angle:55,
                                 wind_weight:0
                                 });

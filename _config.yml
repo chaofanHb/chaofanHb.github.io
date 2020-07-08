@@ -78,6 +78,10 @@ navs:
     href: /about
     label: About
 
+  -
+    href: /jcjj
+    label: 精彩集锦
+
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
 

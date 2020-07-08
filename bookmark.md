@@ -63,6 +63,19 @@ okhttp3（3.8.0版本）
 
 	Comparator<Object> CHINA_COMPARE = Collator.getInstance(java.util.Locale.CHINA);
 
+## springboot监控器Actuator
+	//依赖
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-actuator</artifactId>
+		<version>2.1.3.RELEASE</version>
+        <optional>true</optional>
+    </dependency>
+	//配置文件加入
+	management.endpoints.web.exposure.include=*
+
+访问：http://localhost:8082/actuator
+
 ## CSS
 - [loaders.css](https://connoratherton.com/loaders) - Delightful and performance-focused pure css loading animations
 - [Load Awesome](http://github.danielcardoso.net/load-awesome/animations.html) - Pure CSS Loaders and Spinners 

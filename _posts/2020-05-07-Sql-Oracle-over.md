@@ -46,3 +46,12 @@ T_HTHZ_SYS_FILE_INDEX.STORE_TOKEN and T_HTHZ_MH_FWDTYY.YYZT='Y' and T_HTHZ_MH_FW
 null or T_HTHZ_MH_FWDTYY.TYSJ >= sysdate) ) temp1 on temp1.yyid = T_HTHZ_XX_YDMX.ywxtwhere T_HTHZ_XX_YDMX.tzdx = ?) temp2 where 
 rn = 1 order by clsj desc
 {% endhighlight %}
+
+
+<div id="gitalk-container-oracle-over"></div>
+
+<script>
+  $(document).ready(function() {
+    window.initOracleOverComment();
+  })
+</script>

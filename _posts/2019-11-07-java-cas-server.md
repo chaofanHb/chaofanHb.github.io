@@ -14,12 +14,59 @@ springboot实现CAS的server服务器端的搭建，并实现链接mysql数据�
 
 （此处注意，一定要选择5.3版本的源码。超过5.3版本的cas取消了pom，使用gradle打包，暂时对gradle不是很熟练）
 
-下载完后进入文件夹内执行命令
+打开 POM.XML 文件，更换 repositories ：
+
+    <!-- 注释以下部分，因为使用的是国外的仓库，下载速度较慢 -->
+        <!--<repositories>
+            <repository>
+                <id>sonatype-releases</id>
+                <url>http://oss.sonatype.org/content/repositories/releases/</url>
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+            </repository>
+            <repository>
+                <id>sonatype-snapshots</id>
+                <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+                <snapshots>
+                    <enabled>true</enabled>
+                </snapshots>
+                <releases>
+                    <enabled>false</enabled>
+                </releases>
+            </repository>
+            <repository>
+                <id>shibboleth-releases</id>
+                <url>https://build.shibboleth.net/nexus/content/repositories/releases</url>
+            </repository>
+        </repositories>-->
+
+        <!-- 添加阿里的仓库 -->
+        <repositories>
+            <repository>
+                <id>central</id>
+                <name>aliyun maven</name>
+                <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+                <!-- 是否开启发布版构件下载 -->
+                <releases>
+                    <enabled>true</enabled>
+                </releases>
+                <!-- 是否开启快照版构件下载 -->
+                <snapshots>
+                    <enabled>false</enabled>
+                </snapshots>
+            </repository>
+        </repositories>
+
+
+进入文件夹内执行命令
 
     mvn package
 
 文件夹内没啥代码，全靠拉取远程jar合并成一个war包。
-然后耐心等待。。。。（两个小时后）
 
 命令执行完文件夹下会生成一个target文件夹
 
