@@ -4,7 +4,7 @@
 
     <head>
     </head>
-    <body style="background-image: url('/assets/images/dvaB.jpg');">
+    <body style="background-image: url('/assets/images/dvaB.jpg'); background-size: cover;margin: 0;">
         <!-- //player.bilibili.com/player.html?aid=883761414&bvid=BV16K4y1s7v2&cid=209869691&page=1 -->
         <iframe id="play" src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 70vw; height: auto; display: block; margin: 0 auto;"> </iframe>
         <script>
@@ -16,7 +16,7 @@
             }
             var isTouch_indexHtml = ("ontouchstart" in window) ? true : false;
             if(isTouch_indexHtml){
-                document.getElementById("play").css("width", "100vw")
+                document.getElementById("play").style.width = "100vw";
             }
             document.getElementById("play").style.height = ((document.getElementById("play").offsetWidth/16)*9+114)+'px'
         </script>
