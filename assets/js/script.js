@@ -239,12 +239,13 @@ function removejscssfile(filename,filetype){
 
 //nva点击的伪路由
 var hebin,hebin2;
-function navClick(href){
+function navClick(href, label){
     $.ajax({
         url: href,
         type: "GET",
         dataType: "html",
         success: function(data) {
+                window.location.href='/#'+label;
                 removejscssfile('/assets/css/indexs.css','css')
                 hebin = $(data.substring(data.indexOf('<body>'), data.indexOf('</body>')+7));
                 //动态添加js

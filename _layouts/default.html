@@ -19,6 +19,10 @@
     
     </body>
 <script>
+    if(window.location.hash.length>0){
+        $(decodeURIComponent(window.location.hash)).click();
+    }
+    //网易云音乐
     var musicBgmIn = function(){
         $("#musicBgm").stop().animate({"right":"0px"})
     }
