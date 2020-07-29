@@ -3,10 +3,21 @@
 <html>
 
     <head>
+        <link rel="stylesheet" href="./css/style.css" />
+        <style type="text/css">
+            #play{
+                position: fixed;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        </style>
     </head>
-    <body style="background-image: url('https://img.zcool.cn/community/0150f858fd6c6fa8012160f700d7f4.jpg@1280w_1l_2o_100sh.jpg'); background-size: cover;margin: 0;">
+    <body id="particles" style="background-color: #393D49;">
         <!-- //player.bilibili.com/player.html?aid=883761414&bvid=BV16K4y1s7v2&cid=209869691&page=1 -->
-        <iframe id="play" src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 70vw; height: auto; display: block; margin: 0 auto;"> </iframe>
+        <iframe id="play" src="" scrolling="no" border="0" frameborder="no" framespacing="0" style="width: 70vw; height: auto; display: block;" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""> </iframe>
         <script>
             var str = window.location.search;
             if(str && str.length>0){
@@ -18,8 +29,18 @@
             if(isTouch_indexHtml){
                 document.getElementById("play").style.width = "100vw";
             }
-            document.getElementById("play").style.height = ((document.getElementById("play").offsetWidth/16)*9+114)+'px'
+            document.getElementById("play").style.height = ((document.getElementById("play").offsetWidth/16)*9+114)+'px';
         </script>
     </body>
 </html>
+<script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+<script type='text/javascript' src='./js/jquery.particleground.min.js'></script>
+<script type="text/javascript">
+            $(document).ready(function() {
+                $('#particles').particleground({
+                    dotColor: '#5cbdaa',
+                    lineColor: '#5cbdaa'
+                });
+            });
+</script>
 
