@@ -43,3 +43,8 @@ vue项目在前后端分离的情况下如何正确的进行表单传参。
     this.$axios.post('/xxx.do', {wid: '111', name: '222'}).then(res => {
         console.log(res.data);
     })
+
+## 踩坑笔记
+
+    v-for循环里： 双向绑定的数据不会被watch函数监听，可以使用计算值代替监听，
+    数组对象的监听可开启深度监听：deep:true

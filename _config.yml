@@ -17,13 +17,13 @@ oldBlog_url: https://blog.csdn.net/chaofan1996
 github_url: https://github.com/chaofanHb 
 github_username: chaofanHb
 description: description_of_your_web_site
-favicon: gtq.jpg # Image must be in assets/images
+favicon: gtq1.jpg # Image must be in assets/images
 repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. https://chaofanHb.github.io
-url: https://chaofanHb.github.io
+url: http://localhost:4000
 
 ## Gem
 gems:

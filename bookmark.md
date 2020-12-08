@@ -76,36 +76,15 @@ okhttp3（3.8.0版本）
 
 访问：http://localhost:8082/actuator
 
-## CSS
-- [loaders.css](https://connoratherton.com/loaders) - Delightful and performance-focused pure css loading animations
-- [Load Awesome](http://github.danielcardoso.net/load-awesome/animations.html) - Pure CSS Loaders and Spinners 
-- [Hover.css](http://ianlunn.github.io/Hover/) - Collection of CSS3 powered hover effects
-- [Animate.css](https://github.com/daneden/animate.css) - Bunch of cool, fun, and cross-browser animation. 
+## JRE/JDK/JVM是什么关系
 
-## Front-end web UI/Framework
-- [Bootstrap](http://getbootstrap.com/) - HTML, CSS, and JS framework for developing responsive, mobile first projects on the web
-- [Angular-Material](https://material.angularjs.org/latest/) - Implementation of Google's Material Design Specification
+JRE(JavaRuntimeEnvironment，Java运行环境)，也就是Java平台。所有的Java 程序都要在JRE下才能运行。普通用户只需要运行已开发好的java程序，安装JRE即可。
 
-## Fonts
-- [Google Fonts](https://www.google.com/fonts) - So it's google fonts :D
+JDK(Java Development Kit)是程序开发者用来来编译、调试java程序用的开发工具包。JDK的工具也是Java程序，也需要JRE才能运行。为了保持JDK的独立性和完整性，在JDK的安装过程中，JRE也是 安装的一部分。所以，在JDK的安装目录下有一个名为jre的目录，用于存放JRE文件。
 
-## Icons
-- [Github-Octicons](https://octicons.github.com/) - GitHub's icons
-- [Font-Awesome](https://fortawesome.github.io/Font-Awesome/) - Scalable vector icons that can instantly be customized
-- [Iconfont](http://www.iconfont.cn/) - Alibaba Icon Library (Chinese)
-- [flag-icon-css](http://lipis.github.io/flag-icon-css/) - Country Flags
-- [weloveiconfonts](http://weloveiconfonts.com/) - Icon fonts
-- [Material Icon](https://design.google.com/icons/#ic_accessibility) - Material icons
+JVM(JavaVirtualMachine，Java虚拟机)是JRE的一部分。它是一个虚构出来的计算机，是通过在实际的计算机上仿真模拟各种计算机功能来实现的。JVM有自己完善的硬件架构，如处理器、堆栈、寄存器等，还具有相应的指令系统。Java语言最重要的特点就是跨平台运行。使用JVM就是为了支持与操作系统无关，实现跨平台。
 
-## Color
-- [Minimalist-Color-Palettes](https://www.behance.net/gallery/32154055/Minimalist-Color-Palettes-2015) - Minimalist Color Palettes
+## oracle字符串形式的时间比较
 
-## Tool
-- [ProcessOn](https://www.processon.com/) - UML web app for team (Chinese)
-- [draw.io](https://www.draw.io/) - UML web app for team
-- [WinSCP](https://winscp.net/eng/download.php) - SFTP, SCP and FTP client for Windows
+可以直接使用大于等于号比较
 
-## Books
-- [GitHub Cheat Sheet](https://github.com/tiimgreen/github-cheat-sheet) - GitHub Practical Tips
-- [Git Quick Reference](http://jonas.nitro.dk/git/quick-reference.html) - Git Quick Reference
-- [HTTP API Design Guide](https://geemus.gitbooks.io/http-api-design/content/en/index.html) - HTTP+JSON API design practices
