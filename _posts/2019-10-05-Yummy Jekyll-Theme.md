@@ -57,6 +57,28 @@ ruby dk.rb init
 
 [Yummy-Jekyll源码]({{ site.url }}/assets/files/Yummy-Jekyll-master.zip)
 
+安装 gem 包有时候，会报错： ssl certificate error
+1.修改gem源
+{% highlight ruby %}
+查看源：gem sources -l 
+图内镜像：gem sources -a https://gems.ruby-china.com/
+删除源：gem sources -r https://rubygems.org/ 
+
+下载证书：
+http://curl.haxx.se/ca/cacert.pem
+设置环境变量：
+SSL_CERT_FILE=<证书存放路径>
+如：SSL_CERT_FILE=d:\RailsInstaller\cacert.pem
+重启命令行，再次执行命令
+
+如果还有问题
+set SSL_CERT_FILE=<证书存放路径>
+{% endhighlight %}
+2.或者修改 .gemrc文件(windows 上 .gemrc 存放在： c:\users\your-acount 下面)
+{% highlight ruby %}
+:ssl_verify_mode: 0
+{% endhighlight %}
+
 安装bower，bundle。
 {% highlight ruby %}
 gem install bower
