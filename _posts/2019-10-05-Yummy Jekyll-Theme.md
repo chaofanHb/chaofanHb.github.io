@@ -64,7 +64,7 @@ ruby dk.rb init
 图内镜像：gem sources -a https://gems.ruby-china.com/
 删除源：gem sources -r https://rubygems.org/ 
 
-下载证书：
+下载证书：(这个也能解决git提交失败的https问题)
 http://curl.haxx.se/ca/cacert.pem
 设置环境变量：
 SSL_CERT_FILE=<证书存放路径>

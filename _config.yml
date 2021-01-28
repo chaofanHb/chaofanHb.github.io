@@ -4,7 +4,7 @@
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
-
+dev: false
 # Site settings
 title: 可恶的光头强 
 subtitle: 学而时习之，不亦说乎
@@ -23,6 +23,7 @@ repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. https://chaofanHb.github.io
+# For production, use your github page url. ex. https://coding-pages-bucket-117874-255180-7375-408837-1303706202.cos-website.ap-hongkong.myqcloud.com/_site
 url: https://chaofanHb.github.io
 
 ## Gem

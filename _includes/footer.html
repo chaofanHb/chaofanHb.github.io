@@ -19,13 +19,13 @@
     </div>
 
     <!-- Third-Party JS -->
-    <script type="text/javascript" src="/bower_components/geopattern/js/geopattern.min.js"></script>
+    <script type="text/javascript" src="{{ site.url }}/bower_components/geopattern/js/geopattern.min.js"></script>
 
     <!-- My JS -->
-    <script type="text/javascript" src="/assets/js/script.js"></script>
+    <script type="text/javascript" src="{{site.url}}/assets/js/script.js"></script>
 
     {% for javascript in page.javascript %}
-    <script src="/assets/js/{{javascript}}"></script>
+    <script src="{{site.url}}/assets/js/{{javascript}}"></script>
     {% endfor %}
 
     {% if site.analytics.google.tracking_id %}
@@ -47,3 +47,5 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
     <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
 </footer>
+<input id="baseUrl" type="hidden" value="{{site.url}}" />
+<input id="dev" type="hidden" value="{{site.dev}}" />

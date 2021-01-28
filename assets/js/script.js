@@ -240,12 +240,16 @@ function removejscssfile(filename,filetype){
 //nva点击的伪路由
 var hebin,hebin2;
 function navClick(href, label){
+    var dev = $("#dev").val();
+    var url = $("#baseUrl").val();
     $.ajax({
-        url: href,
+        url: (dev && dev === 'true')?href:(href === '/'?(url+'/index.html'):(url+href+'.html')),
         type: "GET",
         dataType: "html",
         success: function(data) {
-                window.location.href='/#'+label;
+                if(dev && dev === 'true'){
+                    window.location.href='/#'+label;
+                }
                 removejscssfile('/assets/css/indexs.css','css')
                 hebin = $(data.substring(data.indexOf('<body>'), data.indexOf('</body>')+7));
                 //动态添加js
@@ -264,7 +268,8 @@ function navClick(href, label){
                 if(href === '/'){
                     var month = new Date().getMonth();
                     if(month == 0 || month == 1){
-                        $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+                        var t = $("#baseUrl").val()+"/assets/snowflakeBackground/images/snow_bk.jpg";
+                        $(".jumbotron").css("background-image","url('"+t+"')");
                     }
                     $("#xuehua").show();
                     $(".site-header").css("background", "");
@@ -370,13 +375,19 @@ $( document ).ready(function() {
 
         
         //定时雪花效果
+        snowFallInit();
+        
+});
+
+var snowFallInit = function(){
         var month = new Date().getMonth();
         if(month == 0 || month == 1){
-            loadjscssfile('/assets/snowflakeBackground/css/style.css','css', function(){
-                loadjscssfile('/assets/snowflakeBackground/js/ThreeCanvas.js','js', function(){
-                    loadjscssfile('/assets/snowflakeBackground/js/Snow.js','js', function(){
-                        loadjscssfile('/assets/snowflakeBackground/js/snowFall.js','js', function(){
-                            $(".jumbotron").css("background-image","url('/assets/snowflakeBackground/images/snow_bk.jpg')");
+            var url = $("#baseUrl").val();
+            loadjscssfile(url+'/assets/snowflakeBackground/css/style.css','css', function(){
+                loadjscssfile(url+'/assets/snowflakeBackground/js/ThreeCanvas.js','js', function(){
+                    loadjscssfile(url+'/assets/snowflakeBackground/js/Snow.js','js', function(){
+                        loadjscssfile(url+'/assets/snowflakeBackground/js/snowFall.js','js', function(){
+                            $(".jumbotron").css("background-image","url('"+url+"/assets/snowflakeBackground/images/snow_bk.jpg')");
                             $.snowFall({
                                 //创建粒子数量，密度
                                 particleNo: 500,
@@ -402,5 +413,4 @@ $( document ).ready(function() {
             
             
         }
-        
-});
+}
