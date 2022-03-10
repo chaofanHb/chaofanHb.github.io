@@ -5,6 +5,10 @@ subtitle: <span class="mega-octicon octicon-repo"></span>&nbsp;&nbsp; To mark us
 menu: Bookmark
 ---
 
+## SpringBoot创建
+
+[https://start.spring.io](https://start.spring.io)
+
 ## Spring
 　　Spring大约分为20个模块，这些模块分为核心容器、数据访问/集成、Web、AOP、Instrumentation、消息和测试，如下图所示：
 ![spring模块图]({{ site.url }}/assets/images/spring-module.png)

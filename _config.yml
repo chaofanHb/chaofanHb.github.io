@@ -4,7 +4,7 @@
 # which you are expected to set up once and rarely need to edit after that.
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
-dev: false
+dev: true
 # Site settings
 title: 可恶的光头强 
 subtitle: 学而时习之，不亦说乎
@@ -22,9 +22,10 @@ repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io
 
 # The base hostname & protocol for your site
 # For local test, please use http://localhost:4000
-# For production, use your github page url. ex. https://chaofanHb.github.io
+# For production, use your github page url. ex. https://chaofanHb.github.io            https://st67x8.coding-pages.com/
 # For production, use your github page url. ex. https://coding-pages-bucket-117874-255180-7375-408837-1303706202.cos-website.ap-hongkong.myqcloud.com/_site
 url: https://chaofanHb.github.io
+
 
 ## Gem
 gems:
@@ -79,9 +80,9 @@ navs:
     href: /about
     label: About
 
-  -
-    href: /jcjj
-    label: 精彩集锦
+  # -
+  #   href: /jcjj
+  #   label: 精彩集锦
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
@@ -96,4 +97,4 @@ analytics :
 # For about.html. Fell free to create your own!
 skill_software_keywords: [Java, MySQL, Oracle, PL/SQL]
 skill_j2ee_keywords: [SpringBoot, Spring, MyBatis, JSP]
-skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, NodeJS, MongoDB, Redis, Boostrap]
+skill_web_keywords: [HTML, CSS, JS, JQuery, Ajax, NodeJS, MongoDB, Redis, Boostrap, vue]

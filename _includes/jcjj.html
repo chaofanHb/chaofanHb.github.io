@@ -17,7 +17,7 @@
             {% for item in site.data.video %}
             <div class="col-md-4 card text-center" onclick="toB('{{ site.url }}/assets/bilibili/index.html?url={{item.url}}')">
                 <div class="thumbnail">
-                    <div class="card-image" data-pattern-id="{{ item.title }}" style="background-image: url({{item.img}});background-repeat: no-repeat;background-size: cover;">
+                    <div class="card-image" data-pattern-id="{{ item.title }}" style="background-image: url({{site.url}}{{item.img}});background-repeat: no-repeat;background-size: cover;">
                         <div class="card-image-cell">
                             <h3 class="card-title">
                                 <a href="javascript:void(0)">{{ item.title }}</a>
