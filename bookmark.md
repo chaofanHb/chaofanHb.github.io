@@ -5,6 +5,11 @@ subtitle: <span class="mega-octicon octicon-repo"></span>&nbsp;&nbsp; To mark us
 menu: Bookmark
 ---
 
+## 开源镜像网站
+	[eclipse1](http://mirrors.neusoft.edu.cn/eclipse/technology/epp/downloads/release)
+	[eclipse2](https://mirrors.tuna.tsinghua.edu.cn/eclipse/technology/epp/downloads/release)
+	[JDK](https://blog.lupf.cn/articles/2022/02/19/1645282073635.html)
+
 ## SpringBoot创建
 
 [https://start.spring.io](https://start.spring.io)

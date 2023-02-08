@@ -115,6 +115,9 @@ bash.exe 这个位于 /git/bin/ 目录下，选中就行了
 
 - 7.修改D:\.docker\machine\machines\default\config.json里的路径,重新启动docker一切OK
 
+## 5.Kitematic  github下载
+
+[Kitematic下载地址](https://github.com/docker/kitematic/releases)
 
 
 <div id="gitalk-container-docker-windows-install"></div>
