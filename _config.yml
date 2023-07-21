@@ -24,7 +24,7 @@ repository: chaofanHb/chaofanHb.github.io # ex. DONGChuan/DONGChuan.github.io
 # For local test, please use http://localhost:4000
 # For production, use your github page url. ex. https://chaofanHb.github.io            https://st67x8.coding-pages.com/
 # For production, use your github page url. ex. https://coding-pages-bucket-117874-255180-7375-408837-1303706202.cos-website.ap-hongkong.myqcloud.com/_site
-url: http://localhost:4000
+url: https://chaofanHb.github.io
 
 
 ## Gem
@@ -80,9 +80,9 @@ navs:
     href: /about
     label: About
 
-  # -
-  #   href: /jcjj
-  #   label: 精彩集锦
+  -
+    href: /jcjj
+    label: 欢乐时光
 
 # Sidebar to show popular repo
 side_bar_repo_limit: 5 # Number of repos to show
